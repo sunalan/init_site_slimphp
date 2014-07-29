@@ -1,0 +1,27 @@
+{
+    "name": "QRweb backend.",
+    "description": "QRweb backend with PSR-0 autoload configuration.",
+    "require": {
+        "php": ">=5.5.0",
+        "twig/twig": "1.*",
+        "twig/extensions": "1.*",
+        "slim/slim": "2.*",
+        "slim/views": "*",
+        "slim/extras": "2.*",
+        "facebook/php-sdk": "*",
+        "lusitanian/oauth": "~0.2"
+    },
+    "autoload": {
+        "classmap": [
+            "Lib/SessionNative.php",
+            "Lib/Session.php",
+            "Lib/CsrfGuard.php",
+   	    "Lib/DbModel.php",
+            "Lib/gapi.class.php",
+            "Lib/PseudoCrypt.php"
+        ],
+        "psr-0": {
+            "Twig_Extensions_": "vendor/slim/extras/Slim/Extras/Views/Extension"
+        }
+    }
+}

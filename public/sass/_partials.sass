@@ -1,0 +1,119 @@
+.center-middle
+  margin: auto
+  +absolute(top 0 right 0 bottom 0 left 0)
+
+.submit
+  +size(164px, 54px)
+  color: $white
+  font-size: 18px
+  background: url(/public/img/submit.png) center top no-repeat
+  &:hover
+    background-position: center bottom
+.cancel
+  +size(164px, 54px)
+  color: $white
+  font-size: 18px
+  background: url(/public/img/default/cancel_btn.png) 0 0 no-repeat
+  &:hover
+    background-position: 0 100%
+.btn-s
+  +size(130px, 52px)
+  color: $white
+  border: none
+  cursor: pointer
+  font-size: 18px 
+  background: url(/public/img/dashboard/bg_btn.png) 0 0 no-repeat
+  &:hover
+    background-position: 0 100%
+.customize-select
+  +size(300px, 30px)
+  cursor: pointer
+  overflow: hidden
+  border: 1px solid #595959
+  display: inline-block
+  vertical-align: middle
+  position: relative
+  &:after
+    +size(30px, 30px)
+    +absolute(top 0 right 0)
+    content: ""
+    pointer-events: none
+    background: url("/public/img/dashboard/company_list_btn.png") no-repeat scroll 0 100% transparent
+    &:hover
+      background-position: 100% 100%
+  select
+    +size(100%, 30px)
+    color: #333333
+    font-size: 18px
+    line-height: 1
+    padding: 0
+    border: 0
+    border-radius: 0
+    text-overflow: ""
+    -moz-appearance: none
+    -webkit-appearance: none
+
+.subheader
+  color: white
+  font:
+    size: 24px
+    weight: bold
+  margin: 0
+  padding: 15px 0 15px 15px
+  background-color: #A80000
+  &.add-site-subheader
+    background-color: #FFB700
+
+// Switch Button
+.onoffswitch
+  width: 106px
+  -webkit-user-select: none
+  -moz-user-select: none
+  -ms-user-select: none
+.onoffswitch-checkbox
+  display: none
+  &.active + .onoffswitch-label .onoffswitch-inner
+    margin-left: 0
+  &.active + .onoffswitch-label .onoffswitch-switch
+    right: 0px
+.onoffswitch-label
+  display: block
+  overflow: hidden
+  cursor: pointer
+  border: 2px solid #FFFFFF
+  border-radius: 39px
+.onoffswitch-inner
+  width: 200%
+  margin-left: -100%
+  +prefix(transition, margin 0.3s ease-in 0s, webkit moz ms o)
+.onoffswitch-inner:before, .onoffswitch-inner:after
+  float: left
+  +size(50%, 28px)
+  padding: 0
+  line-height: 28px
+  color: white
+  font-size: 15px
+  font-family: Trebuchet, Arial, sans-serif
+  font-weight: bold
+  -moz-box-sizing: border-box
+  -webkit-box-sizing: border-box
+  box-sizing: border-box
+.onoffswitch-inner:before
+  content: attr(data-on)
+  padding-left: 30px
+  background-color: #FFB800
+  color: #FFFFFF
+.onoffswitch-inner:after
+  content: attr(data-off)
+  padding-right: 30px
+  background-color: #A8A8A8
+  color: #FFFFFF
+  text-align: right
+.onoffswitch-switch
+  width: 16px
+  margin: 8px
+  background: #FFFFFF
+  border: 2px solid #FFFFFF
+  border-radius: 39px
+  +absolute(top 0 right 74px bottom 0)
+  +prefix(transition, margin 0.3s ease-in 0s, webkit moz ms o)

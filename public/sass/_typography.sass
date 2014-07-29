@@ -1,0 +1,50 @@
+// ---------------------------------------------------------------------------
+// Basic Font
+
+$font-size: 16px
+$font-family: Helvetica, Georgia, "微軟正黑體", Microsoft JhengHei, "微軟雅黑體", Arial, Heiti TC, Microsoft Simhei, "新細明體", Microsoft YaHei, "黑体", PMingLiU, serif
+$font-garamond: Garamond, EB Garamond, Helvetica, Georgia, serif
+
+*,
+*:after,
+*:before
+  -webkit-box-sizing: border-box
+  -moz-box-sizing: border-box
+  box-sizing: border-box
+  
+a
+  color: $black
+  text-decoration: none
+ul
+  margin: 0
+  padding: 0
+  list-style: none
+button
+  border: 0 none
+  cursor: pointer
+h1, h2, h3, h4, h5, h6
+  line-height: 1
+  margin: 1em 0
+h1
+  font-size: 2em
+h2
+  font-size: 1.8em
+h3
+  font-size: 1.5em
+h4
+  font-size: 1.2em
+h5, h6
+  font-size: 1em
+
+.clearfix
+  +clearfix
+  &::before, &::after 
+    content: " "
+    display: table
+  &::after
+    clear: both
+
+.garamond
+  font-family: $font-garamond
+.bold
+  font-weight: bold

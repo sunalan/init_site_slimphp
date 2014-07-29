@@ -1,0 +1,77 @@
+// Color
+@mixin color($color)
+  color: $color
+// Font Size
+@function calculateRem($size)
+  $remSize: $size / 16px
+  @return $remSize * 1rem
+
+@mixin font-size($size)
+  font-size: $size
+  font-size: calculateRem($size)
+
+// Size
+@mixin size($width, $height: $width)
+  width: $width
+  height: $height
+// Position
+@mixin position($position, $args)
+  position: $position
+  @each $o in top right bottom left z-index
+    $i: index($args, $o)
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+      #{$o}: nth($args, $i + 1)
+
+@mixin absolute($args)
+  +position(absolute, $args)
+ 
+@mixin fixed($args)
+  +position(fixed, $args)
+ 
+@mixin relative($args)
+  +position(relative, $args)
+
+// Box Model
+@mixin box($box, $args)
+  @each $o in top right bottom left
+    $i: index($args, $o)
+    @if $i and $i + 1 <= length($args) and type-of(nth($args, $i + 1)) == number
+      #{$box+"-"+$o}: nth($args, $i + 1)
+
+@mixin padding($args)
+  +box(padding, $args)
+ 
+@mixin margin($args)
+  +box(margin, $args)
+ 
+@mixin border($args)
+  +box(border, $args)
+
+// Prefix
+@mixin prefix($property, $value, $vendors: webkit moz ms o)
+  @if $vendors
+    @each $vendor in $vendors
+      #{"-" + $vendor + "-" + $property}: #{$value}
+  #{$property}: #{$value}
+
+// Transform Base on Prefix
+@mixin transform($value)
+  +prefix(transform, $value)
+ 
+// column Count Base on Prefix
+@mixin column-count($value)
+  +prefix(column-count, $value)
+
+// Radius Base on Prefix
+@mixin radius($radius)
+  +prefix(border-radius, $radius)
+
+// Opacity
+@mixin opacity($opacity)
+  opacity: $opacity
+  $opacity-ie: $opacity * 100
+  filter: alpha(opacity=$opacity-ie) //IE8
+// Display Inline Block
+@mixin inline-block($align: middle)
+  display: inline-block
+  vertical-align: $align

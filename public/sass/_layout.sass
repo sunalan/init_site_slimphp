@@ -1,0 +1,46 @@
+body
+  font
+    size: $font-size
+    weight: lighter
+    family: $font-family
+  position: relative
+/* header */
+#header
+  +size(100%, 80px)
+  overflow: visible
+  background-color: #f08300
+  position: relative 
+  .header--logo
+    float: left
+    +margin(top 8px left 10px)
+  .header--logout
+    float: right
+    +size(100px, 40px)
+    color: #f08300
+    +margin(top 20px right 20px)
+    text-align: center
+    line-height: 40px
+    display: block
+    font:
+      size: 1.5em
+      weight: bold
+    border-radius: 2em
+    background-color: white
+#main
+  display: -webkit-flex
+  display: flex
+  min-height: 78vh
+.container
+  flex: 1
+  position: relative
+
+/* footer */
+#footer
+  height: 60px
+  color: #959595
+  line-height: 60px
+  font:
+    size: 1.5em
+    weight: bold
+  text-align: center
+  background-color: #e6e6e6
